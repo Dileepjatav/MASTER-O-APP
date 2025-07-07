@@ -1,0 +1,25 @@
+# Dependency directories
+node_modules/
+npm-debug.log*
+
+# Environment variables
+.env*
+
+# Build artifacts
+build/
+dist/
+
+# Coverage reports
+coverage/
+
+# Log files
+logs/
+*.log
+
+# OS specific files
+.DS_Store
+Thumbs.db
+
+# Miscellaneous
+*.tmp
+*.bak
