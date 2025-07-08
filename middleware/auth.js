@@ -14,7 +14,7 @@ export const authenticateToken = (req, res, next) => {
   //   if (err) return res.sendStatus(403);
   req.user = {
     id: "12345", // Replace with actual user ID from token
-    role: "user", // Replace with actual user role from token
+    role: "admin", // Replace with actual user role from token
   }; // Simulating a user object for demonstration purposes
 
   //   next();
@@ -24,7 +24,6 @@ export const authenticateToken = (req, res, next) => {
 
 export const authorizeRoles = (...roles) => {
   return (req, res, next) => {
-    console.log("User Role:", roles);
     if (!roles.includes(req.user.role))
       return res.status(403).json({ message: "Forbidden" });
     next();
