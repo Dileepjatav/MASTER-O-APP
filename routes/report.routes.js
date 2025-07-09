@@ -8,8 +8,23 @@ import { authenticateToken, authorizeRoles } from "../middleware/auth.js";
 
 const router = express.Router();
 
-router.get("/user-performance", authorizeRoles("admin"), reportUserPerformance);
-router.get("/skill-gap", authorizeRoles("admin"), reportSkillGap);
-router.get("/time-based", authorizeRoles("admin"), reportTimeBased);
+router.get(
+  "/user-performance",
+  authenticateToken,
+  authorizeRoles("admin"),
+  reportUserPerformance
+);
+router.get(
+  "/skill-gap",
+  authenticateToken,
+  authorizeRoles("admin"),
+  reportSkillGap
+);
+router.get(
+  "/time-based",
+  authenticateToken,
+  authorizeRoles("admin"),
+  reportTimeBased
+);
 
 export default router;

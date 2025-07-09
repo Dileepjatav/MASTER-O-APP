@@ -14,7 +14,7 @@ const router = express.Router();
 router.use("/auth", authRoutes);
 router.use("/reports", authenticateToken, reportRoutes);
 router.use("/users", authenticateToken, userRoutes);
-router.use("/question", authenticateToken, questionRoutes);
+router.use("/questions", authenticateToken, questionRoutes);
 router.use("/skills", authenticateToken, skillRoutes);
 router.use("/attempts", authenticateToken, attemptRoutes);
 

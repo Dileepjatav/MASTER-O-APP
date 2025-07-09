@@ -9,6 +9,7 @@ export const reportUserPerformance = async (req, res) => {
     const data = await getUserPerformance();
     res.json(data);
   } catch (err) {
+    console.log(err);
     res.status(500).json({ message: err.message });
   }
 };
@@ -24,7 +25,8 @@ export const reportSkillGap = async (req, res) => {
 
 export const reportTimeBased = async (req, res) => {
   try {
-    const data = await getTimeBasedReport(req.data.range);
+    const { startDate, endDate } = req.query;
+    const data = await getTimeBasedReport(startDate, endDate);
     res.json(data);
   } catch (err) {
     res.status(500).json({ message: err.message });

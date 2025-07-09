@@ -44,15 +44,10 @@ export const createSkill = async ({ name, description }) => {
   return result.insertId;
 };
 
-export const createAttempt = async ({
-  user_id,
-  skill_id,
-  total_score,
-  completed_at,
-}) => {
+export const createAttempt = async ({ user_id, skill_id }) => {
   const [result] = await connectDB.db.query(
-    `INSERT INTO quiz_attempts (user_id, skill_id, total_score, completed_at) VALUES (?, ?, ?, ?)`,
-    [user_id, skill_id, total_score, completed_at || new Date()]
+    `INSERT INTO quiz_attempts (user_id, skill_id) VALUES (?, ?)`,
+    [user_id, skill_id]
   );
   return result.insertId;
 };

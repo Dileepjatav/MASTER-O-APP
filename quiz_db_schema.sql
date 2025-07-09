@@ -2,11 +2,11 @@
 CREATE DATABASE IF NOT EXISTS quiz_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE quiz_db;
 
-DROP TABLE IF EXISTS quiz_answers;
-DROP TABLE IF EXISTS quiz_attempts;
-DROP TABLE IF EXISTS questions;
-DROP TABLE IF EXISTS skill_categories;
-DROP TABLE IF EXISTS users;
+-- DROP TABLE IF EXISTS quiz_answers;
+-- DROP TABLE IF EXISTS quiz_attempts;
+-- DROP TABLE IF EXISTS questions;
+-- DROP TABLE IF EXISTS skill_categories;
+-- DROP TABLE IF EXISTS users;
 
 -- ----------------------------------
 -- USERS TABLE
@@ -87,10 +87,9 @@ CREATE INDEX idx_answers_question ON quiz_answers(question_id);
 
 
 
-
 INSERT INTO skill_categories (name, description)
 VALUES ('JavaScript', 'Questions related to JavaScript basics and advanced concepts'),
-       ('MySQL', 'MySQL query and schema-related questions');
+       ('MySQL', 'MySQL query and schema-related questions'),('Math', 'Calculation Based');
 
 INSERT INTO users (name, email, password, role)
 VALUES ('Admin', 'admin@example.com', '$2b$10$Ab38OmpL/2556mjN9NLl9OkBC0kKLCaJA8wwGIvcxMXf2nrKFxDKq', 'admin');

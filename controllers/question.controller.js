@@ -10,8 +10,8 @@ import "dotenv/config";
 export const getQuestions = async (req, res) => {
   try {
     const { skill_id, page = 1, limit = 10 } = req.query;
-    const questions = await getAllQuestions({ skill_id, page, limit });
-    res.json(questions);
+    const result = await getAllQuestions({ skill_id, page, limit });
+    res.status(200).json({ data: result });
   } catch (err) {
     res.status(500).json({ message: err.message });
   }
@@ -19,6 +19,7 @@ export const getQuestions = async (req, res) => {
 
 export const getQuestion = async (req, res) => {
   try {
+    console.log(req.params.id);
     const question = await getQuestionById(req.params.id);
     if (!question) return res.status(404).json({ message: "Not found" });
     res.json(question);

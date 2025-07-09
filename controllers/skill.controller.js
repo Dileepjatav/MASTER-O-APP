@@ -26,7 +26,7 @@ export const getSkill = async (req, res) => {
 
 export const addSkill = async (req, res) => {
   try {
-    const skillId = await createSkill(req.data);
+    const skillId = await createSkill(req.body);
     res.status(201).json({ message: "Skill created", id: skillId });
   } catch (err) {
     res.status(500).json({ message: err.message });
