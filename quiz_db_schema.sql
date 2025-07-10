@@ -2,11 +2,11 @@
 CREATE DATABASE IF NOT EXISTS quiz_db DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;
 USE quiz_db;
 
--- DROP TABLE IF EXISTS quiz_answers;
--- DROP TABLE IF EXISTS quiz_attempts;
--- DROP TABLE IF EXISTS questions;
--- DROP TABLE IF EXISTS skill_categories;
--- DROP TABLE IF EXISTS users;
+DROP TABLE IF EXISTS quiz_answers;
+DROP TABLE IF EXISTS quiz_attempts;
+DROP TABLE IF EXISTS questions;
+DROP TABLE IF EXISTS skill_categories;
+DROP TABLE IF EXISTS users;
 
 -- ----------------------------------
 -- USERS TABLE
