@@ -140,7 +140,7 @@ export const getAllAttempts = async ({ page = 1, limit = 10 }) => {
 export const getAllUsers = async ({ page = 1, limit = 10 }) => {
   const offset = (page - 1) * limit;
   const [rows] = await dbConnect.db.query(
-    "SELECT id, name, email, role FROM users ORDER BY id DESC LIMIT ? OFFSET ?",
+    "SELECT id, name, email, role FROM users WHERE role='user' ORDER BY id DESC LIMIT ? OFFSET ?",
     [Number(limit), Number(offset)]
   );
   return rows;
