@@ -1,6 +1,6 @@
 import { z } from "zod";
 
-import { getAllSkills } from "../services/getDataFromDb.js";
+import { getAllSkills, getSkillById } from "../services/getDataFromDb.js";
 import { createSkill } from "../services/insertDataIntoDb.js";
 import { updateSkill } from "../services/updateDataIntoDb.js";
 import { deleteSkill } from "../services/deleteDataFromDb.js";

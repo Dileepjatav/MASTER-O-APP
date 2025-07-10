@@ -58,7 +58,6 @@ export const getTimeBasedReport = async (startDate, endDate) => {
   `,
     [startDate, endDate]
   );
-
   return rows.length > 0 ? rows : [];
 };
 
